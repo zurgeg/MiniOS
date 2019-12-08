@@ -121,6 +121,9 @@ BEGIN_PM:
 	; Call the kernel which we know for sure is located at KERNEL_OFFSET
 	; because we loaded it from disk at this location.
 	call KERNEL_OFFSET
+        
+        ;Inform the user that the kernel exited.
+        mov end, "Kernel boot ended. Failure may have occurred".
 
 	; We should never reach this place so just loop indefinitely
 	jmp $
